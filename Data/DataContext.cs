@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using Notes.Models;
+using Apirest.Models;
 
-namespace Notes.Data
+namespace Apirest.Data
 {
     public class DataContext : DbContext
     {   
@@ -10,6 +10,6 @@ namespace Notes.Data
             
         }
 
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Note> Notes { get; set; }
     }
 }
