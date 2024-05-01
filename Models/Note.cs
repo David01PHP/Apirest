@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Notes.Models
+namespace Apirest.Models
 {
-    public class Product
+    public class Note
     {
         public int Id { get; set; }
         public string? Name { get; set; }
         public string? Description { get; set; }
-        public decimal Price { get; set; }
-        public DateTime DateOfHigh { get; set; }
+        public DateTime Creation_date { get; set; }
+        /*public DateTime Update_date { get; set; }*/
     }
 }

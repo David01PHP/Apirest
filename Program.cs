@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Notes.Data;
+using Apirest.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +9,7 @@ builder.Services.AddControllers();
 //mysql
 builder.Services.AddDbContext<DataContext>(options => options.UseMySql(
                                 builder.Configuration.GetConnectionString("MySqlConnection"),
-                                Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.30-msql")
+                                Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.20-mysql")
                                 ));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
