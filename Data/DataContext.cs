@@ -10,6 +10,7 @@ namespace Apirest.Data
             
         }
 
+
         public DbSet<Note> Notes { get; set; }
     }
 }
