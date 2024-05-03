@@ -12,11 +12,16 @@ builder.Services.AddDbContext<DataContext>(options => options.UseMySql(
                                 Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.20-mysql")
                                 ));
 
+
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -46,6 +51,13 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast")
 .WithOpenApi();
+//cors 
+app.UseCors(builder => 
+{
+    builder.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+});
 app.UseHttpsRedirection();
 app.MapControllers();
 app.Run();
